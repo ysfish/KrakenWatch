@@ -59,7 +59,7 @@ def main():
       else:
         kraken_found = 0
       if kraken_found == 1:
-        native_value = int(item['value'])/1000000000000000000
+        native_value = int(item['value'])/(10 ** DECIMALS)
         current_rewards = float(native_value) * float(current_coin_price) / float(current_token_price)
         staker_percentage = (float(current_rewards) * 36) / (float(everrise_staked) * float(everrise_multiplier)) * 100
         kaboom_datetime = datetime.utcfromtimestamp(int(item['timeStamp']))
